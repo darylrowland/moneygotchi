@@ -1,0 +1,92 @@
+body {
+    background-color: #969696;
+    color: #ffffff;
+}
+
+a {
+    color: #747474;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.spaced-right {
+    margin-right: 10px;
+}
+
+.health-status {
+    position: absolute;
+    top: 130px;
+    right: 130px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.money-status {
+    position: absolute;
+    top: 130px;
+    left: 120px;
+    font-size: 12px;
+}
+
+.lcd-grid {
+    width: 300px;
+    position: absolute;
+    top: 158px;
+    left: 96px;
+}
+
+.lcd-row {
+    max-height: 10px;
+    position: relative;
+}
+
+.lcd-square {
+    display: inline-block;
+    width: 10px;
+    height: 10px !important;
+    max-height: 10px !important;
+    min-height: 10px !important;
+    margin: 0px;
+}
+
+.lcd-square-on {
+    background-color: #000000 !important;
+}
+
+.lcd-square-edit {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.lcd-square-edit:hover {
+    background-color: #cccccc;
+}
+
+.medium-margin-top {
+    margin-top: 20px;
+}
+
+.moneygotchi {
+    background-image: url('../images/moneygotchi_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 413px;
+    height: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: 20px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}

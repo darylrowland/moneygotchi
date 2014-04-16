@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moneygotchi</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="ng-app" ng-app="moneygotchiApp">
+
+    <div ng-controller="MainController">
+        <div class="moneygotchi">
+            <div class="money-status">
+                <img src="images/dollars.png" width="16" ng-show="getMoneyRating() >= 1"/><img src="images/dollars.png" width="16" ng-show="getMoneyRating() >= 2"/><img src="images/dollars.png" width="16" ng-show="getMoneyRating() >= 3"/>
+            </div>
+
+            <div class="health-status">
+                <img src="images/heart.png" width="16" ng-show="getHealthRating() >= 1"/><img src="images/heart.png" width="16" ng-show="getHealthRating() >= 2"/><img src="images/heart.png" width="16" ng-show="getHealthRating() >= 3"/>
+            </div>
+
+            <div class="lcd-grid">
+                <div class="lcd-row" ng-repeat="row in lcdGrid track by $index">
+
+                    <div class="lcd-square" ng-repeat="cell in row track by $index" ng-click="toggleSquare($parent.$index, $index)" ng-class="{'lcd-square-on': cell == true, 'lcd-square-edit': editing}"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="centered medium-margin-top">
+            <img class="logo" src="images/logo2.png"/>
+
+            <div>
+                <a href="" class="spaced-right" ng-click="saveMoney()">Put money in savings</a>
+                <a href="" class="spaced-right" ng-click="buyCoffee()">Grab a coffee</a>
+                <a href="" class="spaced-right" ng-click="eatHealthy()">Buy healthy food</a>
+            </div>
+
+        </div>
+
+
+        <div ng-if="editing" class="centered">
+            <textarea class="form-control" style="width: 500px; height: 200px; margin-left: auto; margin-right: auto;">{{getGridStr()}}</textarea>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app/moneygotchi-app.js"></script>
+    <script src="js/app/controllers/main-controller.js"></script>
+
+</body>
+</html>
